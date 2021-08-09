@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WISE</title>
+        <!-- <link rel="shortcut icon" href="favicon.ico" type="image/png"> -->
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <!-- BoxIcons -->
+        <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+        <!-- Css -->
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="css/grid.css">
+        <link rel="stylesheet" href="css/input.css">
+    </head>
+    <body>
+
+            <!-- Start Sidebar -->
+            <div class="sidebar">
+                <div class="sidebar__logo">
+                    <div class="div__logo">
+                        <span>WISE</span>
+                    </div>
+                    <div class="sidebar__close" id="sidebar-close">
+                        <i class="bx bx-left-arrow-alt"></i>
+                    </div>
+                </div>
+                <div class="sidebar__user">
+                    <div class="sidebar__user__info">
+                        <img src="img/user-image.png" alt="" class="profile__image"/>
+                        <div class="sidebar__user__name">
+                            Chan
+                        </div>
+                    </div>
+                    <button class="btn btn__outline">
+                        <i class="bx bx-log-out bx-flip-horizontal"></i>
+                    </button>
+                </div>
+                <!-- Start Sidebar Menu -->
+                <ul class="sidebar__menu">
+                    <li>
+                        <a href="#"  class="nav__item active" id="nav-dashboard" onclick="openContent('dashboard',this.id)">
+                            <i class='bx bx-home'></i>
+                            <span>dashboard</span>
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <i class='bx bx-id-card' ></i>
+                            <span>Employee Information</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class='bx bx-lock-open'></i>
+                            <span>Account Information</span>
+                        </a>
+                    </li> -->
+                    <li class="sidebar__submenu">
+                        <a href="#" class="sidebar__menu__dropdown">
+                            <i class='bx bx-id-card' ></i>
+                            <span>information</span>
+                            <div class="dropdown__icon"></div>
+                        </a>
+                        <ul class="sidebar__menu sidebar__menu__dropdown__content">
+                            <li>
+                                <a href="#" class="nav__item" id="nav-personaldetails" onclick="openContent('personal-details',this.id)">personal details</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-employeedetails" onclick="openContent('employee-details',this.id)">employee details</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-accountdetails" onclick="openContent('account-details',this.id)">account details</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar__submenu">
+                        <a href="#" class="sidebar__menu__dropdown">
+                            <i class='bx bx-transfer-alt'></i>
+                            <span>transactions</span>
+                            <div class="dropdown__icon"></div>
+                        </a>
+                        <ul class="sidebar__menu sidebar__menu__dropdown__content">
+                            <li>
+                                <a href="#" class="nav__item" id="nav-leaveapp" onclick="openContent('leave-app',this.id)">leave application</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-obcaapp" onclick="openContent('obca-app',this.id)">OB/CA application</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-otapp" onclick="openContent('overtime-app',this.id)">over-time application</a>
+                            </li>
+                            <!-- <li>
+                                <a href="#" class="nav__item" id="nav-loanapp">loan application</a>
+                            </li> -->
+                        </ul>
+                    </li>
+                    <li class="sidebar__submenu">
+                        <a href="#" class="sidebar__menu__dropdown">
+                            <i class='bx bx-message-alt-dots'></i>
+                            <span>inquiries</span>
+                            <div class="dropdown__icon"></div>
+                        </a>
+                        <ul class="sidebar__menu sidebar__menu__dropdown__content">
+                            <li>
+                                <a href="#" class="nav__item" id="nav-loanbalance" onclick="openContent('loan-balance',this.id)">loan balance</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-leavebalance" onclick="openContent('leave-balance',this.id)">leave balance</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sidebar__submenu">
+                        <a href="#" class="sidebar__menu__dropdown">
+                            <i class='bx bxs-report' ></i>
+                            <span>report</span>
+                            <div class="dropdown__icon"></div>
+                        </a>
+                        <ul class="sidebar__menu sidebar__menu__dropdown__content">
+                            <li>
+                                <a href="#" class="nav__item" id="nav-dtr" onclick="openContent('dtr',this.id)">daily time record</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav__item" id="nav-payslip">payslip</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a href="#">
+                            <i class="bx bx-mail-send"></i>
+                            <span>mail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bx bx-chat"></i>
+                            <span>chat</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bx bx-calendar"></i>
+                            <span>calendar</span>
+                        </a>
+                    </li> -->
+                    <li class="sidebar__submenu">
+                        <a href="#" class="sidebar__menu__dropdown">
+                            <i class="bx bx-cog"></i>
+                            <span>settings</span>
+                            <div class="dropdown__icon"></div>
+                        </a>
+                        <ul class="sidebar__menu sidebar__menu__dropdown__content">
+                            <li>
+                                <a href="#" class="dark__mode__toggle" id="dark-mode-toggle">
+                                    dark mode
+                                    <span class="dark__mode__switch"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- End Sidebar Menu -->
+            </div>
+            <!-- End Sidebar -->
+
+            <!-- Start Main Content -->
+            <div class="main">
+                <div class="main__header">
+                    <div class="mobile__toggle" id="mobile-toggle">
+                        <i class="bx bx-menu-alt-right"></i>
+                    </div>
+                    <div class="main__title" id="main-title">
+                        dashboard
+                    </div>
+                </div>
+                <div class="main__content">
+
+                    <!-- Start Dashboard Content -->
+                    <div id="dashboard" class="tab__nav" data-navigation="Dashboard">
+
+                    </div>
+                    <!-- End Dashboard Content -->
+
+                    <!-- Start Information Content -->
+                    <div id="personal-details" class="tab__nav" data-navigation="Personal Details">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Personal Information
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row row__input">
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label for="txtFirstName">First Name</label>
+                                                <input type="text" placeholder="First Name" id="txtFirstName" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label for="txtLastName">Last Name</label>
+                                                <input type="text" placeholder="Last Name" id="txtLastName" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-4 col-sm-12">
+                                                <label for="txtBirthDate">Date of Birth</label>
+                                                <input type="date" id="txtBirthDate" />
+                                            </div>
+                                            <div class="col-4 col-md-4 col-sm-12">
+                                                <label for="txtGender">Gender</label>
+                                                <select id="txtGender">
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-4 col-md-4 col-sm-12">
+                                                <label for="txtContactNumber">Contact Number</label>
+                                                <input type="text" id="txtContactNumber" placeholder="09xx-xxx-xxxx" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-sm-12">
+                                                <label for="txtPresentAddress">Present Address</label>
+                                                <input type="text" id="txtPresentAddress" placeholder="Street Number , Village or Subdivision" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <input type="text" id="txtPresentBrgy" placeholder="Barangay" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <input type="text" id="txtPresentCity" placeholder="City" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <input type="text" id="txtPresentPostalCode" placeholder="Postal Code" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-sm-12">
+                                                <div>
+                                                    <input type="checkbox" id="chckAddress" onclick="toggleAddress()" checked>
+                                                    <label for="chckAddress">Is your <b>present address</b> the same as <b>permanent address ?</b></label> 
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-12 col-sm-12" id="div-perm-addinfo">
+                                                <label for="txtPermanentAddress">Permanent Address</label>
+                                                <input type="text" id="txtPermanentAddress" placeholder="Street Number , Village or Subdivision" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12" id="div-perm-addbrgy">
+                                                <input type="text" id="txtPermanentBrgy" placeholder="Barangay" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12" id="div-perm-addcity">
+                                                <input type="text" id="txtPermanentCity" placeholder="City" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12" id="div-perm-addcode">
+                                                <input type="text" id="txtPermanentPostalCode" placeholder="Postal Code" autocomplete="off"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box__footer">
+                                        <div class="row">
+                                            <input type="submit" value="Update" class="input__btn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="employee-details" class="tab__nav" data-navigation="Employee Details">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Employee Information
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row row__input">
+                                            <div class="col-3 col-md-6 col-sm-12">
+                                                <label for="txtEmployeeNumber">Employee Number</label>
+                                                <input type="text" placeholder="Employee Number" id="txtEmployeeNumber" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-6 col-sm-12">
+                                                <label for="txtNickname">Nickname</label>
+                                                <input type="text" placeholder="Nickname" id="txtNickname" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label for="txtEmailAdd">Email Address</label>
+                                                <input type="text" placeholder="Email Address" id="txtEmailAdd" autocomplete="off"/>
+                                            </div>
+                                            <!-- Job Information -->
+                                            <div class="col-6 col-md-4 col-sm-12">
+                                                <label for="txtJobTitle">Job Title</label>
+                                                <input type="text" placeholder="Job Title" id="txtJobTitle" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtJobLevel">Job Grade</label>
+                                                <input type="text" placeholder="Job Grade" id="txtJobGrade" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtSalaryGrade">Salary Grade</label>
+                                                <input type="text" placeholder="Salary Grade" id="txtSalaryGrade" autocomplete="off"/>
+                                            </div>
+                                            <!-- Section Information -->
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtDivision">Division</label>
+                                                <input type="text" id="txtDivision" placeholder="Division" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtDepartment">Department</label>
+                                                <input type="text" id="txtDepartment" placeholder="Department" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtSection">Section</label>
+                                                <input type="text" id="txtSection" placeholder="Section" autocomplete="off"/>
+                                            </div>
+                                            <!-- Statutory -->
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtBIR">TIN</label>
+                                                <input type="text" placeholder="Tax Identification Number" id="txtBIR" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtpagibig">Pag-IBIG</label>
+                                                <input type="text" placeholder="Pag-IBIG Number" id="txtpagibig" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtphilHealth">PhilHealth</label>
+                                                <input type="text" placeholder="PhilHealth ID Number" id="txtphilHealth" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-3 col-md-4 col-sm-12">
+                                                <label for="txtSSS">SSS</label>
+                                                <input type="text" placeholder="SSS Number" id="txtSSS" autocomplete="off"/>
+                                            </div>
+                                            <!-- Salary Information -->
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtBasicRate">Basic Rate</label>
+                                                <input type="text" id="txtBasicRate" placeholder="Basic Rate" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtMonthlyBonus">Monthly Bonus</label>
+                                                <input type="text" id="txtMonthlyBonus" placeholder="Monthly Bonus Rate" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-4 col-md-6 col-sm-12">
+                                                <label for="txtAllowance">Total Allowances</label>
+                                                <input type="text" id="txtAllowance" placeholder="Allowances" autocomplete="off"/>
+                                            </div>
+                                            <!-- <div class="col-6"> -->
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Allowance</th>
+                                                            <th>Rate</th>
+                                                            <th></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Rice Allowance</td>
+                                                            <td>750.00</td>
+                                                            <td><span class="confirm__btn"><i class='bx bx-check' ></i></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nihongo N1 Allowance</td>
+                                                            <td>10000.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nihongo N2 Allowance</td>
+                                                            <td>6000.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nihongo N3 Allowance</td>
+                                                            <td>4000.00</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Nihongo N4 Allowance</td>
+                                                            <td>2000.00</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            <!-- </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="account-details" class="tab__nav" data-navigation="Account Details">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Account Information
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row row__input">
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label for="txtUsername">Username</label>
+                                                <input type="text" placeholder="Username" id="txtUsername" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label for="txtEmployeeCode">Employee Code</label>
+                                                <input type="text" placeholder="Employee Code" id="txtEmployeeCode" autocomplete="off"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Information Content -->
+
+                    <!-- Start Transaction Content -->
+                    <div id="leave-app" class="tab__nav" data-navigation="Leave Application">
+                        <div class="row row-input">
+                            <div class="col-3 col-md-4 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Apply Leave
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row__input">
+                                            <div class="col-12">
+                                                <label for="txtLeaveCode">Leave Code</label>
+                                                <select id="txtLeaveCode">
+                                                    <option value="Emergency Leave">Emergency Leave</option>
+                                                    <option value="Paid Time Off">Leave of Absence</option>
+                                                    <option value="Paid Time Off">Paid Time Off</option>
+                                                    <option value="Unpaid SL">Unpaid SL</option>
+                                                    <option value="Unpaid VL">Unpaid VL</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtReasonCode">Reason Code</label>
+                                                <select id="txtReasonCode">
+                                                    <option value="NA">NA: Not Applicable</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtLeaveStart">Leave From</label>
+                                                <input type="date" id="txtLeaveStart" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtLeaveEnd">Leave To</label>
+                                                <input type="date" id="txtLeaveEnd" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtLeaveType">Leave Type</label>
+                                                <select id="txtLeaveType">
+                                                    <option value="Whole Day">Emergency Leave</option>
+                                                    <option value="AM Leave">AM Leave</option>
+                                                    <option value="PM Leave">PM Leave</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtDuration">Duration</label>
+                                                <input type="text" id="txtDuration" placeholder="0 day/s" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtReason">Reason(Detailed)</label>
+                                                <textarea rows='1' id="txtReason" autocomplete="off">
+
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box__footer">
+                                        <div class="row">
+                                            <input type="submit" value="Submit" class="input__btn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9  col-md-8 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Pending Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Leave Date</th>
+                                                    <th>Leave Type</th>
+                                                    <th>Reason</th>
+                                                    <th>Day</th>
+                                                    <th>Status</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021</td>
+                                                    <td>Paid Time Off : PM</td>
+                                                    <td>NA : Not Applicable</td>
+                                                    <td>0.5</td>
+                                                    <td>A</td>
+                                                    <td>Fever and Colds.</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="box">
+                                    <div class="box__header">
+                                        Past Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Leave Date</th>
+                                                    <th>Leave Type</th>
+                                                    <th>Reason</th>
+                                                    <th>Day</th>
+                                                    <th>Status</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021</td>
+                                                    <td>Paid Time Off : PM</td>
+                                                    <td>NA : Not Applicable</td>
+                                                    <td>0.5</td>
+                                                    <td>A</td>
+                                                    <td>Fever and Colds.</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="obca-app" class="tab__nav" data-navigation="OB/CA Application">
+                        <div class="row row-input">
+                            <div class="col-3 col-md-4 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Apply OB/CA
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row__input">
+                                            <div class="col-12">
+                                                <label for="txtDateFrom">Date From</label>
+                                                <input type="date" id="txtDateFrom" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtDateTo">Date To</label>
+                                                <input type="date" id="txtDateTo" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtTimeIn">Time In</label>
+                                                <input type="time" id="txtTimeIn" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtTimeOut">Time Out</label>
+                                                <input type="time" id="txtTimeOut" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtReasonOBCA">Reason for OB/CA</label>
+                                                <select id="txtReasonOBCA">
+                                                    <option value="No In">No IN</option>
+                                                    <option value="No Out">No OUT</option>
+                                                    <option value="Official Business">Official Business</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtRemarks">Remarks</label>
+                                                <textarea rows='1' id="txtRemarks" autocomplete="off">
+
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box__footer">
+                                        <div class="row">
+                                            <input type="submit" value="Submit" class="input__btn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9  col-md-8 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Pending Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Date From</th>
+                                                    <th>Time In</th>
+                                                    <th>Date To</th>
+                                                    <th>Time Out</th>
+                                                    <th>Status</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021</td>
+                                                    <td>08:00AM</td>
+                                                    <td>07/01/202</td>
+                                                    <td>05:30PM</td>
+                                                    <td>A</td>
+                                                    <td>Official Business; Recovery of project.</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="box">
+                                    <div class="box__header">
+                                        Past Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Date From</th>
+                                                    <th>Time In</th>
+                                                    <th>Date To</th>
+                                                    <th>Time Out</th>
+                                                    <th>Status</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021</td>
+                                                    <td>08:00AM</td>
+                                                    <td>07/01/202</td>
+                                                    <td>05:30PM</td>
+                                                    <td>A</td>
+                                                    <td>Official Business; Recovery of project.</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="overtime-app" class="tab__nav" data-navigation="Overtime Application">
+                        <div class="row row-input">
+                            <div class="col-3 col-md-4 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Apply Overtime
+                                    </div>
+                                    <div class="box__body box__input">
+                                        <div class="row__input">
+                                            <div class="col-12">
+                                                <label for="txtOTDateStart">Start Date</label>
+                                                <input type="date" id="txtOTDateStart" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtOTDateEnd">End Date</label>
+                                                <input type="date" id="txtOTDateTo" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtOTTimeStart">Start Time</label>
+                                                <input type="time" id="txtOTTimeStart" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtOTTimeEnd">End Time</label>
+                                                <input type="time" id="txtOTTimeEnd" />
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtOTDuration">Duration</label>
+                                                <input type="text" id="txtOTDuration" placeholder="0 day/s" autocomplete="off"/>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="txtJobToDo">Task/s</label>
+                                                <textarea rows='1' id="txtJobToDo" autocomplete="off">
+
+                                                </textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="box__footer">
+                                        <div class="row">
+                                            <input type="submit" value="Submit" class="input__btn"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-9  col-md-8 col-sm-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Pending Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Start Time</th>
+                                                    <th>End Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Status</th>
+                                                    <th>Task/s</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021 17:30</td>
+                                                    <td>07/01/2021 19:30</td>
+                                                    <td>2</td>
+                                                    <td>P</td>
+                                                    <td>Recovery</td>
+                                                    <td>-</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="box">
+                                    <div class="box__header">
+                                        Past Applications
+                                    </div>
+                                    <div class="box__body overflow__scroll tbl__div">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Start Time</th>
+                                                    <th>End Time</th>
+                                                    <th>Duration</th>
+                                                    <th>Status</th>
+                                                    <th>Task/s</th>
+                                                    <th>Remarks</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021 17:30</td>
+                                                    <td>07/01/2021 19:30</td>
+                                                    <td>2</td>
+                                                    <td>A</td>
+                                                    <td>Recovery</td>
+                                                    <td>Approved[07/02/2021 13:00]</td>
+                                                    <td>
+                                                        <span class="del__btn"><i class='bx bx-trash'></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div id="loan-app" class="tab__nav" data-navigation="Loan Application">
+                        <div class="row">
+                            <div class="col-12">
+                                
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- End Transaction Content -->
+
+                    <!-- Start Inquiry Content -->
+                    <div id="loan-balance" class="tab__nav" data-navigation="Loan Balance">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Loan Balance
+                                    </div>
+                                    <div class="box__body overflow__scroll">
+                                        <div class="row row__input">
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label>Loan Application ID : <span>LA_21216_20210101</span></label>
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label>Loan Principal Amount : <span>Php40,000.00</span></label>
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label>Cutoff Amortization : <span>Php1,866.67</span></label>   
+                                            </div>
+                                            <div class="col-6 col-md-6 col-sm-12">
+                                                <label>Actual Loan Amount : <span>Php44,800.00</span></label>
+                                            </div>
+                                        </div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Term</th>
+                                                    <th>Period</th>
+                                                    <th>Amount</th>
+                                                    <th>Outstanding</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>2021/01/15</td>
+                                                    <td>Php1,866.67</td>
+                                                    <td>Php42,933.33</td>
+                                                    <td>
+                                                        <span class="confirm__btn"><i class='bx bx-check'></i></span>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>2021/01/30</td>
+                                                    <td>Php1,866.67</td>
+                                                    <td>Php41,066.66</td>
+                                                    <td>
+                                                        <!-- <span class=""><i class='bx bx-x'></i></span> -->
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>2021/02/15</td>
+                                                    <td>Php1,866.67</td>
+                                                    <td>Php39,200.00</td>
+                                                    <td>
+                                                        <!-- <span class=""><i class='bx bx-x'></i></span> -->
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="leave-balance" class="tab__nav" data-navigation="Leave Balance">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Leave Balance
+                                    </div>
+                                    <div class="box__body overflow__scroll">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Leave Code</th>
+                                                    <th>Eligibility</th>
+                                                    <th>Used</th>
+                                                    <th>Balance</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Emergency Leave</td>
+                                                    <td>5.00</td>
+                                                    <td>0.00</td>
+                                                    <td>5.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Leave of Absence</td>
+                                                    <td>180.00</td>
+                                                    <td>0.00</td>
+                                                    <td>180.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Paid Time Off</td>
+                                                    <td>24.00</td>
+                                                    <td>5.00</td>
+                                                    <td>19.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Inquiry Content -->
+
+                    <!-- Start Report Content -->
+                    <div id="dtr" class="tab__nav" data-navigation="Daily Time Record">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="box">
+                                    <div class="box__header">
+                                        Daily Time Record
+                                    </div>
+                                    <div class="box__body overflow__scroll">
+                                        <div class="row row__input">
+                                        <div class="col-3 col-md-3 col-sm-12" >
+                                            <label>Start Date</label>
+                                            <input type="date"/>
+                                        </div>
+                                        <div class="col-3 col-md-3 col-sm-12" >
+                                            <label>End Date</label>
+                                            <input type="date"/>
+                                        </div>
+                                    </div>
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>Date</th>
+                                                    <th>Day Type</th>
+                                                    <th>Time In</th>
+                                                    <th>Time Out</th>
+                                                    <th>Leave</th>
+                                                    <th>Overtime</th>
+                                                    <th>Remarks</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>07/01/2021 THU</td>
+                                                    <td>Regular Working Day</td>
+                                                    <td>08:00AM</td>
+                                                    <td>05:30PM</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>Approved OBCA : 08:00-17:30</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>07/02/2021 FRI</td>
+                                                    <td>Regular Working Day</td>
+                                                    <td>08:00AM</td>
+                                                    <td>12:00PM</td>
+                                                    <td>PTO (0.5 ) : PM</td>
+                                                    <td>-</td>
+                                                    <td>Approved OBCA : 08:00-12:00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>07/03/2021 SAT</td>
+                                                    <td>Rest Day</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>Rest Day</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>07/04/2021 SUN</td>
+                                                    <td>Rest Day</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>Rest Day</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>07/05/2021 MON</td>
+                                                    <td>Regular Working Day</td>
+                                                    <td>08:00AM</td>
+                                                    <td>07:30PM</td>
+                                                    <td>-</td>
+                                                    <td>2.0</td>
+                                                    <td>Approved OBCA : 08:00-19:30</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Report Content -->
+                </div>
+            </div>
+            <!-- End Main Content -->
+
+            <!-- Apex Chart Script -->
+            <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+            <!-- Script -->
+            <script src="js/app.js" type="text/javascript"></script>
+    </body>
+</html>

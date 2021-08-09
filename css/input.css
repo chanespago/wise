@@ -1,0 +1,125 @@
+@media screen and (min-width: 1024px) {
+  .row__input {
+    width: 100%;
+    /* background-color: aqua; */
+  }
+  .input__btn {
+    margin-left:auto;
+    margin-right: 10px;
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .row__input {
+    width: 100%;
+  }
+  .input__btn {
+    width: 100%;
+  }
+  table {
+    font-size: 0.75rem;
+  }
+}
+
+input,
+select,
+textarea {
+  outline: none;
+  cursor: pointer;
+}
+
+textarea{  
+  overflow:hidden;
+  resize: none;
+}
+
+.box__input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.row__input > div {
+  display: flex;
+  flex-direction: column;
+}
+.row__input > div > label {
+  display: block;
+  width: 100%;
+  padding: 5px 0px;
+  /* background-color:aquamarine; */
+}
+
+.row__input > div > input[type=text],
+.row__input > div > textarea,
+.row__input > div > div > input[type=text] {
+  padding: 10px;
+}
+.row__input > div > input[type=date],
+.row__input > div > div > input[type=date],
+.row__input > div > input[type=time],
+.row__input > div > div > input[type=time]   {
+  padding: 8px;
+}
+.row__input > div > select,
+.row__input > div > div > select  {
+  padding: 10px;
+}
+
+.input__btn {
+  border: none;
+  background-color: #0652dd;
+  color: #fff;
+  border-radius: 4px;
+  position: relative;
+  display: block;
+  padding: 10px 0px;
+}
+
+#div-perm-addinfo,
+#div-perm-addbrgy,
+#div-perm-addcity,
+#div-perm-addcode {
+  display: none;
+}
+
+table {
+  width: 100%;
+  font-size: 0.875rem;
+}
+table thead tr {
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tbl__div {
+  max-height: 300px;
+  overflow: auto;
+  /* max-width: 1000px; */
+}
+
+.del__btn {
+  padding: 5px;
+  background-color: rgb(206, 65, 65);
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.confirm__btn {
+  padding: 5px;
+  background-color: rgb(109, 221, 65);
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer; 
+}
